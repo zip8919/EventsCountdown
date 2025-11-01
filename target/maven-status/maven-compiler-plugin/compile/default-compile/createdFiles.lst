@@ -1,0 +1,14 @@
+xyz\zip8919\mcplugin\examcountdown\managers\CountdownTask.class
+xyz\zip8919\mcplugin\examcountdown\utils\CountdownUtils$CountdownData.class
+xyz\zip8919\mcplugin\examcountdown\utils\CountdownUtils.class
+xyz\zip8919\mcplugin\examcountdown\managers\PlayerDataManager.class
+xyz\zip8919\mcplugin\examcountdown\managers\LiteMottoIntegration.class
+xyz\zip8919\mcplugin\examcountdown\managers\ExamCountdownExpansion.class
+xyz\zip8919\mcplugin\examcountdown\managers\LiteMottoIntegration$MottoCallback.class
+xyz\zip8919\mcplugin\examcountdown\ExamCountdown.class
+xyz\zip8919\mcplugin\examcountdown\managers\ConfigManager.class
+xyz\zip8919\mcplugin\examcountdown\utils\DebugUtils.class
+xyz\zip8919\mcplugin\examcountdown\commands\ExamCountdownCommand.class
+xyz\zip8919\mcplugin\examcountdown\listeners\PlayerListener.class
+xyz\zip8919\mcplugin\examcountdown\utils\Utils.class
+xyz\zip8919\mcplugin\examcountdown\managers\PluginManager.class

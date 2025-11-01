@@ -1,0 +1,61 @@
+# 高考倒计时插件配置文件
+
+# 高考日期设置
+# 方式1: 指定具体年份的高考日期 (格式: yyyy-MM-dd HH:mm:ss)
+# exam-date: "2025-06-07 09:00:00"
+
+# 方式2: 使用每年固定日期的高考 (格式: MM-dd HH:mm:ss)
+# 如果设置了 exam-date，则忽略 exam-date-pattern
+exam-date-pattern: "06-07 09:00:00"
+
+# 显示格式，支持以下占位符:
+# {days} - 天数
+# {hours} - 小时数
+# {minutes} - 分钟数
+# {seconds} - 秒数
+# {year} - 考试年份
+# {litemotto} - LiteMotto格言
+# 也支持PlaceholderAPI变量，可用变量包括:
+# %examcountdown_days% - 剩余天数
+# %examcountdown_hours% - 剩余小时数
+# %examcountdown_minutes% - 剩余分钟数
+# %examcountdown_seconds% - 剩余秒数
+# %examcountdown_year% - 考试年份
+# %examcountdown_exam_date% - 完整考试日期 (yyyy-MM-dd HH:mm:ss)
+# %examcountdown_exam_date_short% - 简短考试日期 (yyyy-MM-dd)
+# %examcountdown_exam_date_chinese% - 中文完整考试日期 (yyyy年MM月dd日 HH:mm:ss)
+# %examcountdown_exam_date_chinese_short% - 中文简短考试日期 (yyyy年MM月dd日)
+# %examcountdown_litemotto% - 当前格言内容
+# %examcountdown_litemotto_enabled% - LiteMotto插件是否可用 (true/false)
+# %examcountdown_formatted% - 格式化的倒计时
+display-format: |-
+  &m&l------------------------
+  &6{year}年高考倒计时: &e{days}天 {hours}小时 {minutes}分钟 {seconds}秒
+  &b{litemotto}
+  &m&l------------------------
+
+# 是否启用LiteMotto格言功能
+litemotto-enabled: true
+
+# LiteMotto自定义提示词
+litemotto-prompt: "请返回一句鼓励高考学生的格言，要简洁有力，不要包含任何前后缀、额外的文字或解释。"
+
+# 当LiteMotto不可用时的备选格言列表（随机选择其中一个显示）
+fallback-mottos:
+  - "书山有路勤为径，学海无涯苦作舟。"
+  - "宝剑锋从磨砺出，梅花香自苦寒来。"
+  - "努力拼搏，高考必胜！"
+  - "天道酬勤，厚德载物。"
+  - "知识改变命运，勤奋成就未来。"
+
+# 是否允许玩家个人设置开关显示
+use-player-toggle: true
+
+# 玩家默认是否显示倒计时
+default-show: true
+
+# 更新间隔 (ticks, 20 ticks = 1秒)
+update-interval: 20
+
+# 是否启用调试模式（显示更多详细信息）
+debug: false
