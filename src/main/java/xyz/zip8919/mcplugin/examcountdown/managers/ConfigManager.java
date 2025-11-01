@@ -59,10 +59,17 @@ public class ConfigManager {
         DateTimeFormatter patternFormatter = DateTimeFormatter.ofPattern("MM-dd HH:mm:ss");
         
         // 解析日期模式（只包含月、日、时、分、秒）
-        java.time.LocalTime timePart = java.time.LocalTime.parse(datePattern.substring(6), 
-                DateTimeFormatter.ofPattern("HH:mm:ss"));
-        java.time.MonthDay monthDayPart = java.time.MonthDay.parse(datePattern.substring(0, 5), 
+        // 正确解析日期模式：格式为 "MM-dd HH:mm:ss"
+        String[] parts = datePattern.split(" ");
+        if (parts.length < 2) {
+            // 如果格式不正确，使用默认值
+            parts = new String[]{"06-07", "09:00:00"};
+        }
+        
+        java.time.MonthDay monthDayPart = java.time.MonthDay.parse(parts[0], 
                 DateTimeFormatter.ofPattern("MM-dd"));
+        java.time.LocalTime timePart = java.time.LocalTime.parse(parts[1], 
+                DateTimeFormatter.ofPattern("HH:mm:ss"));
         
         // 获取当前年份
         int currentYear = LocalDateTime.now().getYear();
