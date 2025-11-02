@@ -1,0 +1,48 @@
+# EventsCountdown事件倒计时插件配置示例文件
+# 此文件为用户配置参考，包含配置示例
+# 使用方法：根据需要复制对应配置到 plugins/EventsCountdown/config.yml 中
+# 配置完成后使用 /ec reload 命令重载配置
+
+# 高考倒计时配置
+exam-date-pattern: "06-07 09:00:00"
+display-format: |-
+  &b&l{year}年高考倒计时: &f&l{days}天 {hours}小时 {minutes}分钟 {seconds}秒
+  &a&o{litemotto}
+litemotto-prompt: "请生成一句积极向上的高考励志语句，鼓舞人心。不要包含任何前后缀、额外的文字或解释。"
+
+# 元旦倒计时配置
+exam-date-pattern: "01-01 00:00:00"
+display-format: |-
+  &b&l{year}年元旦倒计时: &f&l{days}天 {hours}小时 {minutes}分钟 {seconds}秒
+  &a&o{litemotto}
+litemotto-prompt: "请生成一句迎接新年的积极祝福语句，温馨美好。不要包含任何前后缀、额外的文字或解释。"
+
+# 服务器公告配置
+display-format: |-
+  &a&l服务器公告 &f&l»
+  &a亲爱的玩家们，为提升服务器稳定性，我们将在本周六凌晨2点进行例行维护，
+  &a期间将暂时关闭所有游戏模式，请提前做好准备，维护完成后将开启全新活动奖励，敬请期待，感谢！
+
+# 服务器状态配置
+display-format: |-
+  &a&l服务器状态 &f&l»
+  &a延迟: &f%player_ping%ms &a在线: &f%server_online%/%server_max_players%
+  &aTPS: &f%server_tps%
+
+# 玩家加入欢迎配置
+display-format: |-
+  &a&l欢迎新玩家 &f&l»
+  &a{litemotto}
+litemotto-prompt: "请生成一句热情的玩家欢迎语，友好真挚。欢迎%player_name%加入服务器，不要包含任何前后缀、额外的文字或解释。"
+
+# 每日笑话配置
+display-format: |-
+  &d&l今日笑话 &f&l»
+  &b&o{litemotto}
+litemotto-prompt: "请生成一句有趣的笑话或幽默段子。不要包含任何前后缀、额外的文字或解释。"
+
+# MC冷知识配置
+display-format: |-
+  &d&l你知道吗？ &f&l»
+  &b&o{litemotto}
+litemotto-prompt: "请生成一条关于《我的世界》游戏的冷知识或实用小技巧。不要包含任何前后缀、额外的文字或解释。"
