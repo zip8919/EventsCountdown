@@ -9,7 +9,7 @@
     <version>SNAPSHOT</version>
     
     <name>EventsCountdown</name>
-    <url>http://www.example.com</url>
+    <url>https://github.com/zip8919/EventsCountdown</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
