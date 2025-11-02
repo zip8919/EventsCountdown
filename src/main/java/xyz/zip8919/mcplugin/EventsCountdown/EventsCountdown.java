@@ -1,6 +1,7 @@
 package xyz.zip8919.mcplugin.EventsCountdown;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bstats.bukkit.Metrics;
 import xyz.zip8919.mcplugin.EventsCountdown.commands.EventsCountdownCommand;
 import xyz.zip8919.mcplugin.EventsCountdown.listeners.PlayerListener;
 import xyz.zip8919.mcplugin.EventsCountdown.managers.ConfigManager;
@@ -11,10 +12,14 @@ import xyz.zip8919.mcplugin.EventsCountdown.managers.PluginManager;
 public class EventsCountdown extends JavaPlugin {
     
     private static EventsCountdown instance;
+    private Metrics metrics;
     
     @Override
     public void onEnable() {
         instance = this;
+        
+        // Initialize bStats metrics with plugin ID 27823
+        metrics = new Metrics(this, 27823);
         
         // Initialize config
         ConfigManager.getInstance().initialize();
