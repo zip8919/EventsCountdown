@@ -1,23 +1,21 @@
-package xyz.zip8919.mcplugin.examcountdown.managers;
+package xyz.zip8919.mcplugin.EventCountdown.managers;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.entity.Player;
-import xyz.zip8919.mcplugin.examcountdown.ExamCountdown;
-import xyz.zip8919.mcplugin.examcountdown.managers.ConfigManager;
-import xyz.zip8919.mcplugin.examcountdown.managers.LiteMottoIntegration;
-import xyz.zip8919.mcplugin.examcountdown.utils.CountdownUtils;
+import xyz.zip8919.mcplugin.EventCountdown.EventCountdown;
+import xyz.zip8919.mcplugin.EventCountdown.utils.CountdownUtils;
 
 public class ExamCountdownExpansion extends PlaceholderExpansion {
     
-    private ExamCountdown plugin;
+    private EventCountdown plugin;
     
-    public ExamCountdownExpansion(ExamCountdown plugin) {
+    public ExamCountdownExpansion(EventCountdown plugin) {
         this.plugin = plugin;
     }
     
     @Override
     public String getIdentifier() {
-        return "examcountdown";
+        return "EventCountdown";
     }
     
     @Override

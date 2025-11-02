@@ -1,8 +1,8 @@
-package xyz.zip8919.mcplugin.examcountdown.managers;
+package xyz.zip8919.mcplugin.EventCountdown.managers;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-import xyz.zip8919.mcplugin.examcountdown.ExamCountdown;
+import xyz.zip8919.mcplugin.EventCountdown.EventCountdown;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -27,7 +27,7 @@ public class ConfigManager {
     
     public void initialize() {
         if (this.plugin == null) {
-            this.plugin = ExamCountdown.getInstance();
+            this.plugin = EventCountdown.getInstance();
         }
         saveDefaultConfig();
         reloadConfig();

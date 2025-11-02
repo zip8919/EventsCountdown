@@ -1,9 +1,9 @@
-package xyz.zip8919.mcplugin.examcountdown.managers;
+package xyz.zip8919.mcplugin.EventCountdown.managers;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
-import xyz.zip8919.mcplugin.examcountdown.ExamCountdown;
+import xyz.zip8919.mcplugin.EventCountdown.EventCountdown;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +19,7 @@ public class PlayerDataManager {
     
     private PlayerDataManager() {
         this.playerShowSettings = new HashMap<>();
-        this.playerDataFile = new File(ExamCountdown.getInstance().getDataFolder(), "playerdata.yml");
+        this.playerDataFile = new File(EventCountdown.getInstance().getDataFolder(), "playerdata.yml");
         reloadPlayerData();
     }
     

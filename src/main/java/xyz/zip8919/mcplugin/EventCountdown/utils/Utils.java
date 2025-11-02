@@ -1,4 +1,4 @@
-package xyz.zip8919.mcplugin.examcountdown.utils;
+package xyz.zip8919.mcplugin.EventCountdown.utils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

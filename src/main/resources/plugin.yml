@@ -1,6 +1,6 @@
-main: xyz.zip8919.mcplugin.examcountdown.ExamCountdown
+main: xyz.zip8919.mcplugin.EventCountdown.EventCountdown
 version: 1.0.0-SNAPSHOT
-name: ExamCountdown
+name: EventCountdown
 author: zip8919
 api-version: 1.13
 soft-depend: [PlaceholderAPI,LiteMotto]
