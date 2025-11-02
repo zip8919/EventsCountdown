@@ -34,8 +34,6 @@
 ### 玩家加入欢迎
 ![玩家加入欢迎](img/玩家加入欢迎.png)
 
-### 每日笑话
-![每日笑话](img/每日笑话.png)
 
 
 ## 命令与权限
@@ -99,13 +97,6 @@ display-format: |-
 litemotto-prompt: "请生成一句热情的玩家欢迎语，友好真挚。欢迎%player_name%加入服务器，不要包含任何前后缀、额外的文字或解释。"
 ```
 
-#### 每日笑话配置
-```yaml
-display-format: |-
-  &d&l今日笑话 &f&l»
-  &b&o{litemotto}
-litemotto-prompt: "请生成一句有趣的笑话或幽默段子。不要包含任何前后缀、额外的文字或解释。"
-```
 
 
 ## PlaceholderAPI支持
