@@ -1,7 +1,7 @@
 main: xyz.zip8919.mcplugin.EventsCountdown.EventsCountdown
 version: 1.0.0-SNAPSHOT
 name: EventsCountdown
-author: zip8919
+author: zip8919 & baicaizhale
 api-version: 1.13
 soft-depend: [PlaceholderAPI,LiteMotto]
 
