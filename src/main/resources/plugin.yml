@@ -1,5 +1,5 @@
 main: xyz.zip8919.mcplugin.EventsCountdown.EventsCountdown
-version: 1.1.0
+version: 1.2.0
 name: EventsCountdown
 author: zip8919 & baicaizhale
 api-version: 1.13
