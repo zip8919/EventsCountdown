@@ -1,10 +1,8 @@
 package xyz.zip8919.mcplugin.examcountdown.managers;
 
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitTask;
 import xyz.zip8919.mcplugin.examcountdown.ExamCountdown;
-import xyz.zip8919.mcplugin.examcountdown.listeners.PlayerListener;
 
 public class CountdownTask implements Runnable {
     private static CountdownTask instance;

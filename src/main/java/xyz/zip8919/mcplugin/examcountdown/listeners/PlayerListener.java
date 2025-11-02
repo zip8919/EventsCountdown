@@ -29,6 +29,7 @@ public class PlayerListener implements Listener {
         sendCountdownMessage(player);
     }
     
+    @SuppressWarnings("unused")
     private void sendCountdownMessage(Player player) {
         DebugUtils.debugSection("PlayerListener.sendCountdownMessage() 开始执行");
         DebugUtils.debug("- 玩家: %s", player.getName());
@@ -80,7 +81,7 @@ public class PlayerListener implements Listener {
                         DebugUtils.debug("使用LiteMotto格言替换占位符");
                         processedMessage = processedMessage.replace("{litemotto}", motto);
                     } else {
-                        // 当LiteMotto不可用时，从备选格言中随机选择
+                        // 当LiteMotto返回null时，从备选格言中随机选择
                         String fallbackMotto = config.getRandomFallbackMotto();
                         DebugUtils.debug("LiteMotto返回null，使用备选格言: %s", fallbackMotto);
                         processedMessage = processedMessage.replace("{litemotto}", fallbackMotto);
