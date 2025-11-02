@@ -1,15 +1,15 @@
-package xyz.zip8919.mcplugin.EventCountdown.listeners;
+package xyz.zip8919.mcplugin.EventsCountdown.listeners;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import xyz.zip8919.mcplugin.EventCountdown.managers.ConfigManager;
-import xyz.zip8919.mcplugin.EventCountdown.managers.LiteMottoIntegration;
-import xyz.zip8919.mcplugin.EventCountdown.managers.PlayerDataManager;
-import xyz.zip8919.mcplugin.EventCountdown.utils.CountdownUtils;
-import xyz.zip8919.mcplugin.EventCountdown.utils.DebugUtils;
-import xyz.zip8919.mcplugin.EventCountdown.utils.Utils;
+import xyz.zip8919.mcplugin.EventsCountdown.managers.ConfigManager;
+import xyz.zip8919.mcplugin.EventsCountdown.managers.LiteMottoIntegration;
+import xyz.zip8919.mcplugin.EventsCountdown.managers.PlayerDataManager;
+import xyz.zip8919.mcplugin.EventsCountdown.utils.CountdownUtils;
+import xyz.zip8919.mcplugin.EventsCountdown.utils.DebugUtils;
+import xyz.zip8919.mcplugin.EventsCountdown.utils.Utils;
 
 public class PlayerListener implements Listener {
     

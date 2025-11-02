@@ -1,16 +1,16 @@
-package xyz.zip8919.mcplugin.EventCountdown;
+package xyz.zip8919.mcplugin.EventsCountdown;
 
 import org.bukkit.plugin.java.JavaPlugin;
-import xyz.zip8919.mcplugin.EventCountdown.commands.EventsCountdownCommand;
-import xyz.zip8919.mcplugin.EventCountdown.listeners.PlayerListener;
-import xyz.zip8919.mcplugin.EventCountdown.managers.ConfigManager;
-import xyz.zip8919.mcplugin.EventCountdown.managers.CountdownTask;
-import xyz.zip8919.mcplugin.EventCountdown.managers.PlayerDataManager;
-import xyz.zip8919.mcplugin.EventCountdown.managers.PluginManager;
+import xyz.zip8919.mcplugin.EventsCountdown.commands.EventsCountdownCommand;
+import xyz.zip8919.mcplugin.EventsCountdown.listeners.PlayerListener;
+import xyz.zip8919.mcplugin.EventsCountdown.managers.ConfigManager;
+import xyz.zip8919.mcplugin.EventsCountdown.managers.CountdownTask;
+import xyz.zip8919.mcplugin.EventsCountdown.managers.PlayerDataManager;
+import xyz.zip8919.mcplugin.EventsCountdown.managers.PluginManager;
 
-public class EventCountdown extends JavaPlugin {
+public class EventsCountdown extends JavaPlugin {
     
-    private static EventCountdown instance;
+    private static EventsCountdown instance;
     
     @Override
     public void onEnable() {
@@ -26,12 +26,12 @@ public class EventCountdown extends JavaPlugin {
         CountdownTask.getInstance().start();
         
         // Register commands
-        getCommand("EventCountdown").setExecutor(new EventsCountdownCommand());
+        getCommand("EventsCountdown").setExecutor(new EventsCountdownCommand());
         
         // Register listeners
         getServer().getPluginManager().registerEvents(new PlayerListener(), this);
         
-        getLogger().info("EventCountdown has been enabled!");
+        getLogger().info("EventsCountdown has been enabled!");
     }
 
     @Override
@@ -42,10 +42,10 @@ public class EventCountdown extends JavaPlugin {
         // Save player data
         PlayerDataManager.getInstance().savePlayerData();
         
-        getLogger().info("EventCountdown has been disabled!");
+        getLogger().info("EventsCountdown has been disabled!");
     }
     
-    public static EventCountdown getInstance() {
+    public static EventsCountdown getInstance() {
         return instance;
     }
 }

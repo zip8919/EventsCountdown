@@ -1,6 +1,6 @@
-package xyz.zip8919.mcplugin.EventCountdown.utils;
+package xyz.zip8919.mcplugin.EventsCountdown.utils;
 
-import xyz.zip8919.mcplugin.EventCountdown.managers.ConfigManager;
+import xyz.zip8919.mcplugin.EventsCountdown.managers.ConfigManager;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;

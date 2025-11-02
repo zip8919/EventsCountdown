@@ -1,8 +1,8 @@
-package xyz.zip8919.mcplugin.EventCountdown.managers;
+package xyz.zip8919.mcplugin.EventsCountdown.managers;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-import xyz.zip8919.mcplugin.EventCountdown.EventCountdown;
+import xyz.zip8919.mcplugin.EventsCountdown.EventsCountdown;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -27,7 +27,7 @@ public class ConfigManager {
     
     public void initialize() {
         if (this.plugin == null) {
-            this.plugin = EventCountdown.getInstance();
+            this.plugin = EventsCountdown.getInstance();
         }
         saveDefaultConfig();
         reloadConfig();
@@ -54,8 +54,8 @@ public class ConfigManager {
         
         // 使用每年固定的考试日期模式
         String datePattern = config.getString("exam-date-pattern", "06-07 09:00:00");
-        DateTimeFormatter patternFormatter = DateTimeFormatter.ofPattern("MM-dd HH:mm:ss");
-        
+        DateTimeFormatter.ofPattern("MM-dd HH:mm:ss");
+
         // 解析日期模式（只包含月、日、时、分、秒）
         // 正确解析日期模式：格式为 "MM-dd HH:mm:ss"
         String[] parts = datePattern.split(" ");

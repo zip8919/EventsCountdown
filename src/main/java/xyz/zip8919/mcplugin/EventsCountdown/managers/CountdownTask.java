@@ -1,16 +1,16 @@
-package xyz.zip8919.mcplugin.EventCountdown.managers;
+package xyz.zip8919.mcplugin.EventsCountdown.managers;
 
 import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitTask;
-import xyz.zip8919.mcplugin.EventCountdown.EventCountdown;
+import xyz.zip8919.mcplugin.EventsCountdown.EventsCountdown;
 
 public class CountdownTask implements Runnable {
     private static CountdownTask instance;
     private BukkitTask task;
-    private EventCountdown plugin;
+    private EventsCountdown plugin;
     
     private CountdownTask() {
-        this.plugin = EventCountdown.getInstance();
+        this.plugin = EventsCountdown.getInstance();
     }
     
     public static CountdownTask getInstance() {

@@ -1,8 +1,8 @@
-package xyz.zip8919.mcplugin.EventCountdown.managers;
+package xyz.zip8919.mcplugin.EventsCountdown.managers;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
-import xyz.zip8919.mcplugin.EventCountdown.utils.DebugUtils;
+import xyz.zip8919.mcplugin.EventsCountdown.utils.DebugUtils;
 
 import java.lang.reflect.Method;
 

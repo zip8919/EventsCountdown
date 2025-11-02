@@ -1,11 +1,11 @@
-package xyz.zip8919.mcplugin.EventCountdown.commands;
+package xyz.zip8919.mcplugin.EventsCountdown.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import xyz.zip8919.mcplugin.EventCountdown.managers.ConfigManager;
-import xyz.zip8919.mcplugin.EventCountdown.managers.PlayerDataManager;
+import xyz.zip8919.mcplugin.EventsCountdown.managers.ConfigManager;
+import xyz.zip8919.mcplugin.EventsCountdown.managers.PlayerDataManager;
 
 public class EventsCountdownCommand implements CommandExecutor {
     
@@ -87,7 +87,7 @@ public class EventsCountdownCommand implements CommandExecutor {
                 
             case "reload":
                 // 检查权限
-                if (!sender.hasPermission("EventCountdown.admin")) {
+                if (!sender.hasPermission("EventsCountdown.admin")) {
                     sender.sendMessage("§c你没有权限使用这个命令！");
                     return true;
                 }
@@ -112,7 +112,7 @@ public class EventsCountdownCommand implements CommandExecutor {
         sender.sendMessage("§a/ec help §7- 显示此帮助信息");
         
         // 只有拥有管理员权限的用户才能看到reload命令
-        if (sender.hasPermission("EventCountdown.admin")) {
+        if (sender.hasPermission("EventsCountdown.admin")) {
             sender.sendMessage("§a/ec reload §7- 重新加载配置文件");
         }
         

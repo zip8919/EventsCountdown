@@ -1,14 +1,14 @@
-package xyz.zip8919.mcplugin.EventCountdown.managers;
+package xyz.zip8919.mcplugin.EventsCountdown.managers;
 
 import org.bukkit.Bukkit;
-import xyz.zip8919.mcplugin.EventCountdown.EventCountdown;
+import xyz.zip8919.mcplugin.EventsCountdown.EventsCountdown;
 
 public class PluginManager {
     private static PluginManager instance;
-    private EventCountdown plugin;
+    private EventsCountdown plugin;
     
     private PluginManager() {
-        this.plugin = EventCountdown.getInstance();
+        this.plugin = EventsCountdown.getInstance();
     }
     
     public static PluginManager getInstance() {
