@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import xyz.zip8919.mcplugin.EventsCountdown.EventsCountdown;
 import xyz.zip8919.mcplugin.EventsCountdown.managers.ConfigManager;
 import xyz.zip8919.mcplugin.EventsCountdown.managers.PlayerDataManager;
+import xyz.zip8919.mcplugin.EventsCountdown.managers.UpdateChecker;
 
 public class EventsCountdownCommand implements CommandExecutor {
     
@@ -93,11 +94,13 @@ public class EventsCountdownCommand implements CommandExecutor {
                     return true;
                 }
                 
-                // 手动检查更新
+                sender.sendMessage("§6正在检查更新...");
+                // 手动检查更新，使用新的UpdateChecker实例，设置isManualCheck=true
+                UpdateChecker manualUpdateChecker = new UpdateChecker(EventsCountdown.getInstance(), true, true);
                 if (sender instanceof Player) {
-                    EventsCountdown.getInstance().getUpdateChecker().checkForUpdates((Player) sender);
+                    manualUpdateChecker.checkForUpdates((Player) sender);
                 } else {
-                    EventsCountdown.getInstance().getUpdateChecker().checkForUpdates();
+                    manualUpdateChecker.checkForUpdates();
                 }
                 return true;
                 

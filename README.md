@@ -11,11 +11,12 @@
 
 ## 核心功能
 
-- 🎯 **智能倒计时** - 自动计算距离高考的剩余时间
-- 🎨 **高度可定制** - 支持自定义显示格式和颜色代码
-- 🔌 **插件集成** - 完美支持PlaceholderAPI和LiteMotto
-- 👤 **个人设置** - 允许玩家控制是否显示倒计时
-- 🔄 **自动更新** - 定时刷新倒计时信息
+- 🎯 **智能倒计时** - 自动计算事件剩余时间
+- 🤖 **AI智能生成** - 自动生成个性化励志语句和祝福语
+- 🎨 **高度可定制** - 支持自定义显示格式
+- 🔌 **插件集成** - 支持PlaceholderAPI和LiteMotto
+- 👤 **个人设置** - 玩家可控制显示开关
+- 🔄 **自动更新** - 定时刷新信息
 
 ## 功能展示
 
@@ -70,7 +71,7 @@ display-format: |-
   &b&l{year}年元旦倒计时: &f&l{days}天 {hours}小时 {minutes}分钟 {seconds}秒
   &a&o{litemotto}
 litemotto-prompt: "请生成一句迎接新年的积极祝福语句，温馨美好。不要包含任何前后缀、额外的文字或解释。"
-```
+``
 
 #### 服务器公告配置
 ```yaml
@@ -95,6 +96,7 @@ display-format: |-
   &a{litemotto}
 litemotto-prompt: "请生成一句热情的玩家欢迎语，友好真挚。欢迎%player_name%加入服务器，不要包含任何前后缀、额外的文字或解释。"
 ```
+
 
 
 
@@ -127,6 +129,22 @@ display-format: |-
   &b&l事件倒计时: &f&l%eventscountdown_days%天 %eventscountdown_hours%小时
   &a&o%eventscountdown_litemotto%
 ```
+
+## AI功能使用
+
+### 启用AI功能
+1. 确保已安装LiteMotto插件
+2. 在配置文件中设置`litemotto-prompt`参数
+
+### 配置示例
+```yaml
+litemotto-prompt: "请生成一句积极向上的励志语句"
+```
+
+### 可用变量
+- `{days}` - 剩余天数
+- `{player_name}` - 玩家名称
+- 其他倒计时相关变量
 
 ## 高级功能
 

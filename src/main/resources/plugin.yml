@@ -8,7 +8,7 @@ soft-depend: [PlaceholderAPI,LiteMotto]
 commands:
   eventscountdown:
     description: 控制事件倒计时显示
-    usage: /<command> [on|off|toggle|help|reload]
+    usage: /<command> [on|off|toggle|help|reload|update]
     aliases: [ec]
 
 permissions:
