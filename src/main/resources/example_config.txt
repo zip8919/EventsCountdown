@@ -4,14 +4,14 @@
 # 配置完成后使用 /ec reload 命令重载配置
 
 # 高考倒计时配置
-exam-date-pattern: "06-07 09:00:00"
+event-date-pattern: "06-07 09:00:00"
 display-format: |-
   &b&l{year}年高考倒计时: &f&l{days}天 {hours}小时 {minutes}分钟 {seconds}秒
   &a&o{litemotto}
 litemotto-prompt: "请生成一句积极向上的高考励志语句，鼓舞人心。不要包含任何前后缀、额外的文字或解释。"
 
 # 元旦倒计时配置
-exam-date-pattern: "01-01 00:00:00"
+event-date-pattern: "01-01 00:00:00"
 display-format: |-
   &b&l{year}年元旦倒计时: &f&l{days}天 {hours}小时 {minutes}分钟 {seconds}秒
   &a&o{litemotto}

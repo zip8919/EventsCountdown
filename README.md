@@ -57,7 +57,7 @@
 
 #### 高考倒计时配置
 ```yaml
-exam-date-pattern: "06-07 09:00:00"
+event-date-pattern: "06-07 09:00:00"
 display-format: |-
   &b&l{year}年高考倒计时: &f&l{days}天 {hours}小时 {minutes}分钟 {seconds}秒
   &a&o{litemotto}
@@ -66,7 +66,7 @@ litemotto-prompt: "请生成一句积极向上的高考励志语句，鼓舞人�
 
 #### 元旦倒计时配置
 ```yaml
-exam-date-pattern: "01-01 00:00:00"
+event-date-pattern: "01-01 00:00:00"
 display-format: |-
   &b&l{year}年元旦倒计时: &f&l{days}天 {hours}小时 {minutes}分钟 {seconds}秒
   &a&o{litemotto}
@@ -112,10 +112,10 @@ litemotto-prompt: "请生成一句热情的玩家欢迎语，友好真挚。欢�
 - `%eventscountdown_minutes%` - 剩余分钟数
 - `%eventscountdown_seconds%` - 剩余秒数
 - `%eventscountdown_year%` - 事件年份
-- `%eventscountdown_exam_date%` - 完整事件日期 (yyyy-MM-dd HH:mm:ss)
-- `%eventscountdown_exam_date_short%` - 简短事件日期 (yyyy-MM-dd)
-- `%eventscountdown_exam_date_chinese%` - 中文完整事件日期 (yyyy年MM月dd日 HH:mm:ss)
-- `%eventscountdown_exam_date_chinese_short%` - 中文简短事件日期 (yyyy年MM月dd日)
+- `%eventscountdown_event_date%` - 完整事件日期 (yyyy-MM-dd HH:mm:ss)
+- `%eventscountdown_event_date_short%` - 简短事件日期 (yyyy-MM-dd)
+- `%eventscountdown_event_date_chinese%` - 中文完整事件日期 (yyyy年MM月dd日 HH:mm:ss)
+- `%eventscountdown_event_date_chinese_short%` - 中文简短事件日期 (yyyy年MM月dd日)
 - `%eventscountdown_litemotto%` - 当前格言内容
 - `%eventscountdown_litemotto_enabled%` - LiteMotto插件是否可用 (true/false)
 - `%eventscountdown_formatted%` - 格式化的倒计时

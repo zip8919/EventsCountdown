@@ -27,18 +27,18 @@ public class CountdownUtils {
     }
     
     public static CountdownData calculateCountdown() {
-        LocalDateTime examDate = ConfigManager.getInstance().getExamDate();
-        return calculateCountdown(examDate);
+        LocalDateTime eventDate = ConfigManager.getInstance().getEventDate();
+        return calculateCountdown(eventDate);
     }
     
-    public static CountdownData calculateCountdown(LocalDateTime examDate) {
+    public static CountdownData calculateCountdown(LocalDateTime eventDate) {
         LocalDateTime now = LocalDateTime.now();
         
-        if (now.isAfter(examDate)) {
+        if (now.isAfter(eventDate)) {
             return new CountdownData(0, 0, 0, 0);
         }
         
-        long totalSeconds = ChronoUnit.SECONDS.between(now, examDate);
+        long totalSeconds = ChronoUnit.SECONDS.between(now, eventDate);
         long days = totalSeconds / (24 * 3600);
         totalSeconds %= (24 * 3600);
         long hours = totalSeconds / 3600;

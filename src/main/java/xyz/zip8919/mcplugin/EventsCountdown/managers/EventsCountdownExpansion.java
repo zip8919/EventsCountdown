@@ -5,11 +5,11 @@ import org.bukkit.entity.Player;
 import xyz.zip8919.mcplugin.EventsCountdown.EventsCountdown;
 import xyz.zip8919.mcplugin.EventsCountdown.utils.CountdownUtils;
 
-public class ExamCountdownExpansion extends PlaceholderExpansion {
+public class EventsCountdownExpansion extends PlaceholderExpansion {
     
     private EventsCountdown plugin;
     
-    public ExamCountdownExpansion(EventsCountdown plugin) {
+    public EventsCountdownExpansion(EventsCountdown plugin) {
         this.plugin = plugin;
     }
     
@@ -53,15 +53,15 @@ public class ExamCountdownExpansion extends PlaceholderExpansion {
             case "seconds":
                 return String.valueOf(data.getSeconds());
             case "year":
-                return String.valueOf(config.getExamYear());
-            case "exam_date":
-                return formatExamDate(config.getExamDate(), "yyyy-MM-dd HH:mm:ss");
-            case "exam_date_short":
-                return formatExamDate(config.getExamDate(), "yyyy-MM-dd");
-            case "exam_date_chinese":
-                return formatExamDate(config.getExamDate(), "yyyy年MM月dd日 HH:mm:ss");
-            case "exam_date_chinese_short":
-                return formatExamDate(config.getExamDate(), "yyyy年MM月dd日");
+                return String.valueOf(config.getEventYear());
+            case "event_date":
+                return formatEventDate(config.getEventDate(), "yyyy-MM-dd HH:mm:ss");
+            case "event_date_short":
+                return formatEventDate(config.getEventDate(), "yyyy-MM-dd");
+            case "event_date_chinese":
+                return formatEventDate(config.getEventDate(), "yyyy年MM月dd日 HH:mm:ss");
+            case "event_date_chinese_short":
+                return formatEventDate(config.getEventDate(), "yyyy年MM月dd日");
             case "litemotto":
                 return liteMotto.getMottoSync();
             case "litemotto_enabled":
@@ -74,12 +74,12 @@ public class ExamCountdownExpansion extends PlaceholderExpansion {
     }
     
     /**
-     * 格式化考试日期
-     * @param date 考试日期
+     * 格式化事件日期
+     * @param date 事件日期
      * @param pattern 日期格式
      * @return 格式化后的日期字符串
      */
-    private String formatExamDate(java.time.LocalDateTime date, String pattern) {
+    private String formatEventDate(java.time.LocalDateTime date, String pattern) {
         java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern(pattern);
         return date.format(formatter);
     }

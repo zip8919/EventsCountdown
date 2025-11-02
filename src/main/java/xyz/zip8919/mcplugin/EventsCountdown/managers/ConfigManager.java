@@ -15,7 +15,7 @@ public class ConfigManager {
     private JavaPlugin plugin;
     
     private ConfigManager() {
-        // 延迟初始化plugin变量，避免在ExamCountdown实例完全初始化之前调用getPlugin
+        // 延迟初始化plugin变量，避免在EventsCountdown实例完全初始化之前调用getPlugin
     }
     
     public static ConfigManager getInstance() {
@@ -44,16 +44,16 @@ public class ConfigManager {
         config = plugin.getConfig();
     }
     
-    public LocalDateTime getExamDate() {
-        // 检查是否有指定年份的考试日期
-        String specificDate = config.getString("exam-date");
+    public LocalDateTime getEventDate() {
+        // 检查是否有指定年份的事件日期
+        String specificDate = config.getString("event-date");
         if (specificDate != null && !specificDate.isEmpty()) {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             return LocalDateTime.parse(specificDate, formatter);
         }
         
-        // 使用每年固定的考试日期模式
-        String datePattern = config.getString("exam-date-pattern", "06-07 09:00:00");
+        // 使用每年固定的事件日期模式
+        String datePattern = config.getString("event-date-pattern", "06-07 09:00:00");
         DateTimeFormatter.ofPattern("MM-dd HH:mm:ss");
 
         // 解析日期模式（只包含月、日、时、分、秒）
@@ -72,22 +72,22 @@ public class ConfigManager {
         // 获取当前年份
         int currentYear = LocalDateTime.now().getYear();
         
-        // 创建今年的考试日期
-        LocalDateTime examDate = LocalDateTime.of(currentYear, monthDayPart.getMonthValue(), 
+        // 创建今年的事件日期
+        LocalDateTime eventDate = LocalDateTime.of(currentYear, monthDayPart.getMonthValue(), 
                 monthDayPart.getDayOfMonth(), timePart.getHour(), timePart.getMinute(), 
                 timePart.getSecond());
         
-        // 如果今年的考试日期已经过去，则使用明年的日期
+        // 如果今年的事件日期已经过去，则使用明年的日期
         LocalDateTime now = LocalDateTime.now();
-        if (examDate.isBefore(now)) {
-            examDate = examDate.plusYears(1);
+        if (eventDate.isBefore(now)) {
+            eventDate = eventDate.plusYears(1);
         }
         
-        return examDate;
+        return eventDate;
     }
     
     public String getDisplayFormat() {
-        return config.getString("display-format", "&6高考倒计时: &e{days}天 {hours}小时 {minutes}分钟 {seconds}秒\n&m&l------------------------\n&b{litemotto}\n&m&l------------------------");
+        return config.getString("display-format", "&6事件倒计时: &e{days}天 {hours}小时 {minutes}分钟 {seconds}秒\n&m&l------------------------\n&b{litemotto}\n&m&l------------------------");
     }
     
     public boolean isLitemottoEnabled() {
@@ -95,7 +95,7 @@ public class ConfigManager {
     }
     
     public String getLitemottoPrompt() {
-        return config.getString("litemotto-prompt", "请返回一句鼓励高考学生的格言，要简洁有力，不要包含任何前后缀、额外的文字或解释。");
+        return config.getString("litemotto-prompt", "请返回一句鼓励事件参与者的格言，要简洁有力，不要包含任何前后缀、额外的文字或解释。");
     }
     
     public boolean usePlayerToggle() {
@@ -121,7 +121,7 @@ public class ConfigManager {
     public String getRandomFallbackMotto() {
         List<String> mottos = getFallbackMottos();
         if (mottos == null || mottos.isEmpty()) {
-            return "努力拼搏，高考必胜！"; // 默认格言
+            return "努力拼搏，事件必胜！"; // 默认格言
         }
         
         Random random = new Random();
@@ -130,11 +130,11 @@ public class ConfigManager {
     }
     
     /**
-     * 获取考试年份
-     * @return 考试年份
+     * 获取事件年份
+     * @return 事件年份
      */
-    public int getExamYear() {
-        LocalDateTime examDate = getExamDate();
-        return examDate.getYear();
+    public int getEventYear() {
+        LocalDateTime eventDate = getEventDate();
+        return eventDate.getYear();
     }
 }

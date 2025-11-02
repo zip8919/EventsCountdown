@@ -21,7 +21,7 @@ public class PluginManager {
     public void initialize() {
         // Register PlaceholderAPI expansion if available
         if (Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) {
-            new ExamCountdownExpansion(plugin).register();
+            new EventsCountdownExpansion(plugin).register();
             plugin.getLogger().info("PlaceholderAPI expansion registered!");
         }
         

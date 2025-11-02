@@ -45,7 +45,7 @@ public class PlayerListener implements Listener {
                          .replace("{hours}", String.valueOf(data.getHours()))
                          .replace("{minutes}", String.valueOf(data.getMinutes()))
                          .replace("{seconds}", String.valueOf(data.getSeconds()))
-                         .replace("{year}", String.valueOf(config.getExamYear()));
+                         .replace("{year}", String.valueOf(config.getEventYear()));
         
         // 检查LiteMotto是否启用
         boolean liteMottoEnabled = config.isLitemottoEnabled();
@@ -155,7 +155,7 @@ public class PlayerListener implements Listener {
         // 检查消息是否为空或无效
         if (message == null || message.trim().isEmpty()) {
             DebugUtils.debug("警告: 消息为空或无效，使用默认消息");
-            message = "&6高考倒计时信息暂时不可用，请稍后再试。";
+            message = "&6事件倒计时信息暂时不可用，请稍后再试。";
             message = Utils.colorize(message);
         }
         

@@ -1,33 +1,33 @@
-# 高考倒计时插件配置文件
+# EventsCountdown事件倒计时插件配置文件
 
-# 高考日期设置
-# 方式1: 指定具体年份的高考日期 (格式: yyyy-MM-dd HH:mm:ss)
-# exam-date: "2025-06-07 09:00:00"
+# 事件日期设置
+# 方式1: 指定具体年份的事件日期 (格式: yyyy-MM-dd HH:mm:ss)
+# event-date: "2025-06-07 09:00:00"
 
-# 方式2: 使用每年固定日期的高考 (格式: MM-dd HH:mm:ss)
-# 如果设置了 exam-date，则忽略 exam-date-pattern
-exam-date-pattern: "06-07 09:00:00"
+# 方式2: 使用每年固定日期的事件 (格式: MM-dd HH:mm:ss)
+# 如果设置了 event-date，则忽略 event-date-pattern
+event-date-pattern: "06-07 09:00:00"
 
 # 显示格式，支持以下占位符:
 # {days} - 天数
 # {hours} - 小时数
 # {minutes} - 分钟数
 # {seconds} - 秒数
-# {year} - 考试年份
+# {year} - 事件年份
 # {litemotto} - LiteMotto格言
 # 也支持PlaceholderAPI变量，可用变量包括:
-# %examcountdown_days% - 剩余天数
-# %examcountdown_hours% - 剩余小时数
-# %examcountdown_minutes% - 剩余分钟数
-# %examcountdown_seconds% - 剩余秒数
-# %examcountdown_year% - 考试年份
-# %examcountdown_exam_date% - 完整考试日期 (yyyy-MM-dd HH:mm:ss)
-# %examcountdown_exam_date_short% - 简短考试日期 (yyyy-MM-dd)
-# %examcountdown_exam_date_chinese% - 中文完整考试日期 (yyyy年MM月dd日 HH:mm:ss)
-# %examcountdown_exam_date_chinese_short% - 中文简短考试日期 (yyyy年MM月dd日)
-# %examcountdown_litemotto% - 当前格言内容
-# %examcountdown_litemotto_enabled% - LiteMotto插件是否可用 (true/false)
-# %examcountdown_formatted% - 格式化的倒计时
+# %eventscountdown_days% - 剩余天数
+# %eventscountdown_hours% - 剩余小时数
+# %eventscountdown_minutes% - 剩余分钟数
+# %eventscountdown_seconds% - 剩余秒数
+# %eventscountdown_year% - 事件年份
+# %eventscountdown_event_date% - 完整事件日期 (yyyy-MM-dd HH:mm:ss)
+# %eventscountdown_event_date_short% - 简短事件日期 (yyyy-MM-dd)
+# %eventscountdown_event_date_chinese% - 中文完整事件日期 (yyyy年MM月dd日 HH:mm:ss)
+# %eventscountdown_event_date_chinese_short% - 中文简短事件日期 (yyyy年MM月dd日)
+# %eventscountdown_litemotto% - 当前格言内容
+# %eventscountdown_litemotto_enabled% - LiteMotto插件是否可用 (true/false)
+# %eventscountdown_formatted% - 格式化的倒计时
 display-format: |-
   &m&l------------------------
   &6{year}年高考倒计时: &e{days}天 {hours}小时 {minutes}分钟 {seconds}秒

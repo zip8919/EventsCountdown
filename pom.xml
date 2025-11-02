@@ -4,11 +4,11 @@
             xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://www.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>xyz.zip8919.mcplugin.examcountdown</groupId>
-    <artifactId>ExamCountdown</artifactId>
+    <groupId>xyz.zip8919.mcplugin.eventscountdown</groupId>
+    <artifactId>EventsCountdown</artifactId>
     <version>SNAPSHOT</version>
     
-    <name>ExamCountdown</name>
+    <name>EventsCountdown</name>
     <url>http://www.example.com</url>
 
     <properties>
