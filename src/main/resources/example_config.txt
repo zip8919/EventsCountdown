@@ -40,9 +40,3 @@ display-format: |-
   &d&l今日笑话 &f&l»
   &b&o{litemotto}
 litemotto-prompt: "请生成一句有趣的笑话或幽默段子。不要包含任何前后缀、额外的文字或解释。"
-
-# MC冷知识配置
-display-format: |-
-  &d&l你知道吗？ &f&l»
-  &b&o{litemotto}
-litemotto-prompt: "请生成一条关于《我的世界》游戏的冷知识或实用小技巧。不要包含任何前后缀、额外的文字或解释。"
