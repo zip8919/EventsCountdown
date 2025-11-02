@@ -1,7 +1,5 @@
 # Maven target directory
 target/
-!target/classes/
-!target/test-classes/
 
 # Eclipse
 .classpath
