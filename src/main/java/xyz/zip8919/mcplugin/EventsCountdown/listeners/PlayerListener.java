@@ -4,9 +4,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import xyz.zip8919.mcplugin.EventsCountdown.EventsCountdown;
 import xyz.zip8919.mcplugin.EventsCountdown.managers.ConfigManager;
 import xyz.zip8919.mcplugin.EventsCountdown.managers.LiteMottoIntegration;
 import xyz.zip8919.mcplugin.EventsCountdown.managers.PlayerDataManager;
+import xyz.zip8919.mcplugin.EventsCountdown.managers.UpdateChecker;
 import xyz.zip8919.mcplugin.EventsCountdown.utils.CountdownUtils;
 import xyz.zip8919.mcplugin.EventsCountdown.utils.DebugUtils;
 import xyz.zip8919.mcplugin.EventsCountdown.utils.Utils;
@@ -21,12 +23,43 @@ public class PlayerListener implements Listener {
         if (ConfigManager.getInstance().usePlayerToggle()) {
             // 检查玩家设置
             if (!PlayerDataManager.getInstance().shouldShowCountdown(player)) {
+                // 即使玩家设置为不显示倒计时，仍然检查更新（如果配置允许）
+                checkForUpdatesOnJoin(player);
                 return; // 玩家设置为不显示，直接返回
             }
         }
         
+        // 检查更新（如果配置允许）
+        checkForUpdatesOnJoin(player);
+        
         // 显示倒计时消息
         sendCountdownMessage(player);
+    }
+    
+    /**
+     * 在玩家加入时检查更新
+     * @param player 加入的玩家
+     */
+    private void checkForUpdatesOnJoin(Player player) {
+        ConfigManager config = ConfigManager.getInstance();
+        
+        // 检查是否启用了玩家加入时检查更新功能
+        if (!config.getConfig().getBoolean("update-check.check-on-join", false)) {
+            DebugUtils.debug("玩家加入时更新检查已禁用，跳过检查");
+            return;
+        }
+        
+        // 检查玩家是否有权限接收更新通知
+        if (!player.hasPermission("EventsCountdown.admin")) {
+            DebugUtils.debug("玩家 %s 没有更新通知权限，跳过检查", player.getName());
+            return;
+        }
+        
+        DebugUtils.debug("为玩家 %s 执行加入时更新检查", player.getName());
+        
+        // 使用更新检查器检查更新（仅向该玩家发送通知）
+        UpdateChecker updateChecker = EventsCountdown.getInstance().getUpdateChecker();
+        updateChecker.checkForUpdates(player);
     }
     
     @SuppressWarnings("unused")

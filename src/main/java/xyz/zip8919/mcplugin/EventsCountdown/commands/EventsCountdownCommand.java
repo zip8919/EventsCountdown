@@ -4,6 +4,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import xyz.zip8919.mcplugin.EventsCountdown.EventsCountdown;
 import xyz.zip8919.mcplugin.EventsCountdown.managers.ConfigManager;
 import xyz.zip8919.mcplugin.EventsCountdown.managers.PlayerDataManager;
 
@@ -85,6 +86,21 @@ public class EventsCountdownCommand implements CommandExecutor {
                 }
                 return true;
                 
+            case "update":
+                // 检查权限
+                if (!sender.hasPermission("EventsCountdown.admin")) {
+                    sender.sendMessage("§c你没有权限使用这个命令！");
+                    return true;
+                }
+                
+                // 手动检查更新
+                if (sender instanceof Player) {
+                    EventsCountdown.getInstance().getUpdateChecker().checkForUpdates((Player) sender);
+                } else {
+                    EventsCountdown.getInstance().getUpdateChecker().checkForUpdates();
+                }
+                return true;
+                
             case "reload":
                 // 检查权限
                 if (!sender.hasPermission("EventsCountdown.admin")) {
@@ -111,9 +127,10 @@ public class EventsCountdownCommand implements CommandExecutor {
         sender.sendMessage("§a/ec toggle §7- 切换倒计时显示状态");
         sender.sendMessage("§a/ec help §7- 显示此帮助信息");
         
-        // 只有拥有管理员权限的用户才能看到reload命令
+        // 只有拥有管理员权限的用户才能看到reload和update命令
         if (sender.hasPermission("EventsCountdown.admin")) {
             sender.sendMessage("§a/ec reload §7- 重新加载配置文件");
+            sender.sendMessage("§a/ec update §7- 手动检查插件更新");
         }
         
         sender.sendMessage("§6========================");

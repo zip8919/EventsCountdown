@@ -137,4 +137,12 @@ public class ConfigManager {
         LocalDateTime eventDate = getEventDate();
         return eventDate.getYear();
     }
+    
+    /**
+     * 获取配置文件对象
+     * @return 配置文件对象
+     */
+    public FileConfiguration getConfig() {
+        return config;
+    }
 }

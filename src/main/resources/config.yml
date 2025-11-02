@@ -59,3 +59,14 @@ update-interval: 20
 
 # 是否启用调试模式（显示更多详细信息）
 debug: false
+
+# 更新检测设置
+update-check:
+  # 是否启用自动更新检测
+  enabled: true
+  
+  # 是否在玩家加入时检查更新（仅对有权限的玩家）
+  check-on-join: true
+  
+  # 更新检查间隔（小时），0表示只在启动时检查
+  check-interval: 24

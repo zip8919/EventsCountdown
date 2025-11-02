@@ -8,11 +8,13 @@ import xyz.zip8919.mcplugin.EventsCountdown.managers.ConfigManager;
 import xyz.zip8919.mcplugin.EventsCountdown.managers.CountdownTask;
 import xyz.zip8919.mcplugin.EventsCountdown.managers.PlayerDataManager;
 import xyz.zip8919.mcplugin.EventsCountdown.managers.PluginManager;
+import xyz.zip8919.mcplugin.EventsCountdown.managers.UpdateChecker;
 
 public class EventsCountdown extends JavaPlugin {
     
     private static EventsCountdown instance;
     private Metrics metrics;
+    private UpdateChecker updateChecker;
     
     @Override
     public void onEnable() {
@@ -27,6 +29,9 @@ public class EventsCountdown extends JavaPlugin {
         // Initialize managers
         PluginManager.getInstance().initialize();
         
+        // Initialize update checker
+        updateChecker = new UpdateChecker(this, true);
+        
         // Start countdown task
         CountdownTask.getInstance().start();
         
@@ -35,6 +40,9 @@ public class EventsCountdown extends JavaPlugin {
         
         // Register listeners
         getServer().getPluginManager().registerEvents(new PlayerListener(), this);
+        
+        // Check for updates on startup
+        updateChecker.checkForUpdates();
         
         getLogger().info("EventsCountdown has been enabled!");
     }
@@ -52,5 +60,13 @@ public class EventsCountdown extends JavaPlugin {
     
     public static EventsCountdown getInstance() {
         return instance;
+    }
+    
+    /**
+     * 获取更新检测器实例
+     * @return 更新检测器实例
+     */
+    public UpdateChecker getUpdateChecker() {
+        return updateChecker;
     }
 }
